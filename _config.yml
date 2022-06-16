@@ -1,56 +1,88 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you: 
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+#------------------------------------------------------------
+# Values for this workshop.
+#------------------------------------------------------------
 
-title: Your awesome title
-email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: /jekyll-explorations/ # the subpath of your site, e.g. /blog
-url: https://torwhite.github.io
-markdown: kramdown 
-twitter_username: ""
-github_username:  torwhite
+# More detailed instructions are available at:
+# CHANGE LINK https://carpentries.github.io/workshop-template/customization/index.html
 
-# Build settings
-remote-theme: carpentries/carpentries-theme
+# Life cycle stage of the lesson
+# Possible values: "pre-alpha", "alpha", "beta", "stable"
+# "pre-alpha" for the beginning stages of designing a workshop
+# "alpha" after content has been added, but needs to be reviewed or tested 
+# "beta" ready to teach for the first time, editing stage after first taught
+# "stable" workshop has been taught and modifications made if necessary, little
+# to no editing required at this stage.
+life_cycle: "pre-alpha"
+
+# Overall title for the Workshop.
+title: "Workshop Title"
+
+
+# Magic to make URLs resolve both locally and on GitHub.
+# See https://help.github.com/articles/repository-metadata-on-github-pages/.
+# Please don't change it: <USERNAME>/<PROJECT> is correct.
+repository: torwhite/jekyll-explorations
+
+# Connect to theme
+remote_theme: torwhite/uic-ds-theme
+
+# plug-ins
 plugins:
   - jekyll-feed
+  - jekyll-include-cache
 
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+# Email address, no mailto:
+# (Don't change this -- the contact address for your workshop will be set
+# in the index.md file)
+email: "digscholarship@uic.edu"
+
+# Sites.
+# CHANGE example_repo: "https://github.com/carpentries/lesson-example"
+# CHANGE example_site: "https://carpentries.github.io/lesson-example"
+uic: "https://uic.edu"
+ds_hub: "https://library.uic.edu/services/digital-scholarship/"
+workshop_repo: "https://github.com/torwhite/jekyll-explorations"
+workshop_site: "https://torwhite.github.io/jekyll-explorations"
+cc_by_human: "https://creativecommons.org/licenses/by/4.0/"
+
+# Start time in minutes (0 to be clock-independent, 540 to show a start at 09:00 am).
+start_time: 0
+
+# Specify that things in the episodes collection should be output.
+collections:
+  episodes:
+    output: true
+    permalink: /:path/index.html
+  extras:
+    output: true
+    permalink: /:path/index.html
+
+# Set the default layout for things in the episodes collection.
+defaults:
+  - values:
+      root: .
+      layout: page
+  - scope:
+      path: ""
+      type: episodes
+    values:
+      root: ..
+      layout: episode
+  - scope:
+      path: ""
+      type: extras
+    values:
+      root: ..
+      layout: page
+
+# Files and directories that are not to be copied.
+exclude:
+  - Makefile
+  - bin/
+  - .Rproj.user/
+  - .vendor/
+  - vendor/
+  - .docker-vendor/
+
+# Turn on built-in syntax highlighting.
+highlighter: rouge

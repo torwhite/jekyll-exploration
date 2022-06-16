@@ -256,15 +256,13 @@ PLATFORMS
   arm64-darwin-21
 
 DEPENDENCIES
-  github-pages (~> 226)
-  http_parser.rb (~> 0.6.0)
-  jekyll (~> 3.9.2)
-  jekyll-feed (~> 0.12)
-  minima (~> 2.5)
-  tzinfo (~> 1.2)
-  tzinfo-data
-  wdm (~> 0.1.1)
+  github-pages
+  jekyll-include-cache
+  jekyll-remote-theme
   webrick (~> 1.7)
+
+RUBY VERSION
+   ruby 3.1.2p20
 
 BUNDLED WITH
    2.3.16
