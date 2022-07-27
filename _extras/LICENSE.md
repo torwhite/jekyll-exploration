@@ -1,3 +1,3 @@
 ---
-layout: LICENSE
+layout: license
 ---
