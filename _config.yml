@@ -24,7 +24,7 @@ title: "Workshop Title"
 repository: torwhite/jekyll-explorations
 
 # Connect to theme
-remote_theme: torwhite/uic-ds-theme
+remote_theme: uicacer/acer-workshop-theme
 
 # plug-ins
 plugins:
