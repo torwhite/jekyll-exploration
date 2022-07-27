@@ -1,5 +1,0 @@
----
-layout: LICENSE
-title: "Licenses"
----
-
